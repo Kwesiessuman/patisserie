@@ -16,7 +16,7 @@ use App\Http\Controllers\ordersController;
 */
 //index page for now
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 //page after login(auto from bree)
