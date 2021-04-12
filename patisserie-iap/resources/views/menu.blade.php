@@ -1,7 +1,3 @@
-<?php
-$conn = new mysqli("127.0.0.1", "root", "", "mywebsite", "3307");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +38,10 @@ $conn = new mysqli("127.0.0.1", "root", "", "mywebsite", "3307");
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-			    <li><a href="clienthome.php" class="smoothScroll">HOME</a></li>
-				<li><a href="menu.php" class="smoothScroll">MENU</a></li>
-				<li><a href="cart.php" class="smoothScroll">CART</a></li>
-				<li><a href="history.php" class="smoothScroll">ORDER HISTORY</a></li>
+			    <li><a href="/home" class="smoothScroll">HOME</a></li>
+				<li><a href="/menu" class="smoothScroll">MENU</a></li>
+				<li><a href="/food" class="smoothScroll">FOOD</a></li>
+				<li><a href="/orders" class="smoothScroll">ORDERS</a></li>
 			</ul>
 		</div>
 	</div>
@@ -81,28 +77,16 @@ $conn = new mysqli("127.0.0.1", "root", "", "mywebsite", "3307");
                 <th>Price</th>
             </tr>
 
-            <?php
-            $sql = "SELECT * FROM foods";
-            $result = mysqli_query($conn,$sql);
-            $resultCheck = mysqli_num_rows($result);
-
-            if ($resultCheck > 0){
-                while ($row = mysqli_fetch_assoc($result)){
-                
-                    ?>
-
+			@foreach($menu1 as $menu)
                     <tr>
-                        <td><?php echo $row['foodid']; ?></td>
-                        <td><img src = "<?php echo $row['image']?>" width=200 height=150/></td>
-                        <td><?php echo $row['foodname']; ?></td>
-                        <td><?php echo $row['description']; ?></td>
-                        <td><?php echo $row['price']; ?></td>
+                        <td>{{$menu->foodid}}</td>
+                        <td><img src ="{{$menu->image}}" width=300 height=200></td>
+                        <td>{{$menu->foodname}}</td>
+                        <td>{{$menu->description}}</td>
+                        <td>{{$menu->price}}</td>
                     </tr>
-            
-            <?php        
-                }
-            }
-            ?>
+                    @endforeach 
+           
            
 			</div>
 		</div>

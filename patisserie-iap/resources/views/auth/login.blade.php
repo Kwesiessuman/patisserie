@@ -1,9 +1,40 @@
+
 <x-guest-layout>
     <x-auth-card>
+    <head>
+	<meta charset="utf-8">
+	<title>Foods|La Pâtisserie</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/nivo-lightbox.css">
+	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+	<link rel="stylesheet" href="css/admin.css">
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500' rel='stylesheet' type='text/css'>
+</head>
         <x-slot name="logo">
+
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+              
             </a>
+            <section class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="/index" class="navbar-brand">LA PÂTISSERIE</a>
+		</div>
+	</div>
+</section>  
         </x-slot>
 
         <!-- Session Status -->
@@ -11,8 +42,9 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
+        <br><br><br><br><br><br><br>
+<div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <form method="POST" action="{{ route('login') }}" style="position:absolute">
             @csrf
 
             <!-- Email Address -->
@@ -52,5 +84,6 @@
                 </x-button>
             </div>
         </form>
+</div>
     </x-auth-card>
 </x-guest-layout>

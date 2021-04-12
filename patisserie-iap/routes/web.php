@@ -29,16 +29,19 @@ require __DIR__.'/auth.php';
 //food page
 Route::get('/food',[foodController::class,'index']);
 Route::post('/food/add',[foodController::class,'add']);
-Route::post('/food/update{$id}',[foodController::class,'update']);
-Route::post('/food/delete{$id}',[foodController::class,'delete']);
+Route::post('/food/update{id}',[foodController::class,'update']);
+Route::post('/food/delete{id}',[foodController::class,'delete']);
+Route::get('/menu',[foodController::class,'menu']);
 
 //order page 
 Route::get('/orders',[ordersController::class,'display']);
 
+Route::get('/foods',[foodController::class,'foods']);
 
 
-
-
+Route::get('/home', function () {
+    return view('index');
+});
 
 
 

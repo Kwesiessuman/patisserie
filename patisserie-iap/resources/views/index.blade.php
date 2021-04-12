@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Orders|La Pâtisserie</title>
+	<title>Admin|La Pâtisserie</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/nivo-lightbox.css">
 	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="css/ahome.css">
 	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500' rel='stylesheet' type='text/css'>
 </head>
 
@@ -38,7 +38,7 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/home" class="smoothScroll">HOME</a></li>
-				<li><a href="/dashboard" class="smoothScroll">PROFILE</a></li>
+				<li><a href="/dashboard" class="smoothScroll">DASHBOARD</a></li>
 				<li><a href="/food" class="smoothScroll">FOODS</a></li>
 				<li><a href="/orders" class="smoothScroll">ORDERS</a></li>
 			</ul>
@@ -47,51 +47,27 @@
 </section>
 
 
-<section id="admin" class="parallax-section">
+<section id="ahome" class="parallax-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<h1>ADMIN UNIT</h1>
+				<h1>WELCOME TO THE ADMIN UNIT</h1>
 			</div>
 		</div>
 	</div>		
 </section>
 
 
-<section id="orders" class="parallax-section">
+<section id="copyright">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
-				<h1 class="heading">Orders</h1>
-				<hr>
-			</div>
-
-			<div class="orders">
-            <table style="width:100%">
-                <tr>
-                    <th>No.</th>
-                    <th>Customer</th>
-                    <th>Delivery Address</th>
-                    <th>Total</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                </tr>
-                @foreach($orders_in as $order)
-                        <tr>
-                    
-                            <td>{{$order->orderNo}}</td>
-                            <td>{{$order->customer}}</td>
-                            <td>{{$order->deliveryAddress}}</td>
-                            <td>{{$order->total}}</td>
-                            <td>{{$order->status}}</td>
-                            <td>{{$order->created_at}}</td>
-                        </tr>  
-                    @endforeach 
+			<div class="col-md-12 col-sm-12">
+				<h3>LA PÂTISSERIE</h3>
+				<p>Copyright © La Pâtisserie Restaurant and Café 
 			</div>
 		</div>
 	</div>
 </section>
-
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
